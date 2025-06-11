@@ -11,6 +11,6 @@ sudo curl -SL https://github.com/docker/compose/releases/download/v2.32.4/docker
 && sudo chmod +x /usr/local/bin/docker-compose  
 
 ##  
-初始化 Swarm
-docker swarm init
+初始化 Swarm  
+docker swarm init \ &&
 docker stack deploy -c docker-compose.yml mystack
