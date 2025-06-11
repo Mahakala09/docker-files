@@ -1,0 +1,29 @@
+version: “3”
+services:
+  web:
+    image: nginx
+    hostname: nginx
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /opt/nginx-docker:/etc/nginx
+      - /opt/nginx-docker/conf.d:/etc/nginx/conf.d
+      - /opt/www:/opt/www
+    restart: always
+    #deploy:
+    #  replicas: 2
+    #  restart_policy:
+    #    condition: on-failure
+    ports:
+      - 80:80
+      - 443:443
+      - 31159:11262
+    networks:
+      - webnet
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20MB"
+        max-file: "19"
+networks:
+  webnet:
