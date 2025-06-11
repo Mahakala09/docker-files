@@ -15,4 +15,7 @@ sudo curl -SL https://github.com/docker/compose/releases/download/v2.32.4/docker
 docker swarm init \ &&
 docker stack deploy -c docker-compose.yml mystack  
 # 更新
-docker service update --force mystack_web
+docker service update --force mystack_web  
+docker ps -a --filter name=mystack_web  
+docker stack rm mystack  
+docker stack deploy -c docker-compose.yml mystack  
