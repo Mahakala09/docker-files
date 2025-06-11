@@ -18,4 +18,5 @@ docker stack deploy -c docker-compose.yml mystack
 docker service update --force mystack_web  
 docker ps -a --filter name=mystack_web  
 docker stack rm mystack  
-docker stack deploy -c docker-compose.yml mystack  
+docker stack deploy -c docker-compose.yml mystack   
+docker system prune -af
