@@ -2,7 +2,7 @@ sudo dnf install docker
 sudo yum install docker   
 sudo service docker start  && sudo systemctl  enable docker  
 
-sudo usermod -a -G docker ec2-user   
+sudo usermod -a -G docker user   
 newgrp docker  
 
 Currently the accepted answer does not work for me but the following does:  
