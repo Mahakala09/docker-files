@@ -13,10 +13,10 @@ sudo curl -SL https://github.com/docker/compose/releases/download/v2.32.4/docker
 ##  
 初始化 Swarm  
 docker swarm init \ &&
-docker stack deploy -c docker-compose.yml mystack  
+docker stack deploy -c docker-compose.yml mystack_web  
 # 更新
 docker service update --force mystack_web  
 docker ps -a --filter name=mystack_web  
 docker stack rm mystack  
-docker stack deploy -c docker-compose.yml mystack   
+docker stack deploy -c docker-compose.yml mystack_web   
 docker system prune -af
