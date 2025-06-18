@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  registry:
+    image: registry
+    container_name: registry
+    ports:
+      - "5000:5000"
+    volumes:
+      - registry-data:/var/lib/registry
+    environment:
+      - TZ=Asia/Shanghai
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20MB"
+        max-file: "19"
+
+volumes:
+  registry-data:
